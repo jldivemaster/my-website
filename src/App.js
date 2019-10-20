@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Main from './Main';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import DevContainer from './components/DevContainer';
+import GalleryContainer from './components/GalleryContainer';
+import MyProfile from  './components/MyProfile';
+import MyDashboard from  './dashboard/MyDashboard';
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className="app">
 
-export default App;
+    <BrowserRouter>
+    <Header />
+     <div>
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/dev" component={DevContainer} />
+        <Route path="/pics" component={GalleryContainer} />
+        <Route path="/profile" exact component={MyProfile} />
+        <Route path="/boss" exact component={MyDashboard} />
+      </Switch>
+      </div>
+      <div className="footer">
+      <Footer />
+      </div>
+    </BrowserRouter>
+    </div>
+  )
+};
+
+const mapStateToProps = (state) => {
+  return { currentUserId: state.auth.userId,
+          isSignedIn: state.auth.isSignedIn }
+};
+
+export default connect(mapStateToProps)(App);
+
+// <Route path="/boss" exact render={(props) => (
+//   props.isSignedIn === true
+//   ? <MyDashboard {...props} />
+//   : <Redirect to='/dev' />
+// )} />

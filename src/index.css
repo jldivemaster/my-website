@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  background-color: #707070;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.head{
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  position: absolute;
+  margin-top: 20px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.menu {
+  font-size: 20px;
+}
+
+
+.modal{
+  padding-top: 30px;
+  min-width: 80vw;
+  animation-name: modal;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  background-color: red;
+  /* overflow: hidden; */
+}
+
+.modal-grid{
+  min-width: 80vw;
+  align-content: center;
+}
+
+@keyframes modal {
+  from {height: 0;}
+  to {height: 80vh;}
+}
+
+.name{
+  text-align: center;
+}
+
+.description{
+  text-align: center;
+}
+
+.content{
+  border-style: double;
+  text-align: center;
+  height: 400px;
 }
