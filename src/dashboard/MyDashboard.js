@@ -4,12 +4,16 @@ import Projects from './Projects';
 
 const MyDashboard = () => {
   return(
-    <div className="ui container">My Dash
-      <div className="grid container">
-        <Analytics />
-      </div>
-      <div className="grid container">
-        <Projects />
+    <div className="ui container">My DashBoard
+      <div className="ui grid">
+        <div className="row">
+          <div className="seven wide column section">
+            <Analytics />
+          </div>
+          <div className="seven wide column section">
+            <Projects />
+          </div>
+        </div>
       </div>
     </div>
   )

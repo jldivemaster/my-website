@@ -1,9 +1,18 @@
 import React from 'react';
+import GalleryHome from './GalleryHome';
+import Header from './Header';
 
-const GalleryContainer = () => {
-  return (
-    <div className="ui container">Gallery</div>
-  )
-};
+class GalleryContainer extends React.Component {
+  state = { }
+
+  render(){
+    return(
+      <div>
+      <Header />
+      <GalleryHome />
+      </div>
+    )
+  };
+}
 
 export default GalleryContainer;

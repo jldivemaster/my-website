@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Main from './Main';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import DevContainer from './components/DevContainer';
 import GalleryContainer from './components/GalleryContainer';
@@ -12,10 +11,7 @@ import MyDashboard from  './dashboard/MyDashboard';
 const App = (props) => {
   return (
     <div className="app">
-
     <BrowserRouter>
-    <Header />
-     <div>
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/dev" component={DevContainer} />
@@ -23,7 +19,6 @@ const App = (props) => {
         <Route path="/profile" exact component={MyProfile} />
         <Route path="/boss" exact component={MyDashboard} />
       </Switch>
-      </div>
       <div className="footer">
       <Footer />
       </div>
