@@ -1,73 +1,45 @@
 import React from 'react';
 import GalleryCard from './GalleryCard';
+import { Image } from 'cloudinary-react';;
+
+const locations = ["Indonesia", "Mongolia", "China", "Mexico", "Peru", "Malaysia-Singapore", "Belize", "Russia", "PNW"];
+const subjects = ["Underwater", "Sunsets", "Landscape", "Animals", "City", "People"];
 
 const GalleryHome = (props) => {
+
+  const locCards = locations.map(loc => {
+      let id = loc.indexOf();
+    return (
+
+        <GalleryCard id={`gl${id}`} title={loc} openCollection={props.openView} publicId={`${loc}/1`}/>
+
+  )});
+
+  const subCards = subjects.map(sub => {
+      let id = sub.indexOf();
+    return (
+
+        <GalleryCard id={`gl${id}`} title={sub} openCollection={props.openView} publicId={`${sub}/1`}/>
+
+  )});
+
+
+
   return (
     <div className="ui container gallery">
       <div className="ui three column grid">
         <div className="row subheader">
-        <h3>Locations</h3>
+          <h3>Photos by Location</h3>
         </div>
         <div className="row">
-          <div className="column">
-            <div className="ui fluid raised card">
-              <div class="image">
-                <img src="/images/avatar/large/daniel.jpg" />
-              </div>
-              <div class="content">
-                <a class="header">One</a>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="ui fluid raised card">
-              <div class="image">
-                <img src="/images/avatar/large/daniel.jpg" />
-              </div>
-              <div class="content">
-                <a class="header">Two</a>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <GalleryCard id="1" title="Card Display" openCollection={props.openCollection} />
-          </div>
+          {locCards}
         </div>
 
         <div className="row subheader">
-          <h3>Subjects</h3>
+          <h3>Photos by Subject</h3>
         </div>
         <div className="row">
-          <div className="column">
-            <div className="ui fluid raised card">
-              <div class="image">
-                <img src="/images/avatar/large/daniel.jpg" />
-              </div>
-              <div class="content">
-                <a class="header">One</a>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="ui fluid raised card">
-              <div class="image">
-                <img src="/images/avatar/large/daniel.jpg" />
-              </div>
-              <div class="content">
-                <a class="header">Two</a>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="ui fluid raised card">
-              <div class="image">
-                <img src="/images/avatar/large/daniel.jpg" />
-              </div>
-              <div class="content">
-                <a class="header">Three</a>
-              </div>
-            </div>
-          </div>
+          {subCards}
         </div>
       </div>
     </div>

@@ -45,6 +45,14 @@ class DevContainer extends React.Component {
           </div>
         </div>
       </div>
+      <div className="ui list">
+        <div className="header">Blog Posts
+        </div>
+        <div className="ui unordered list">
+          <ul><a href="https://medium.com/swlh/quantum-computing-1d40d4ed43b2">Quantum Computing</a></ul>
+          <ul><a href="https://medium.com/@jlspursfan/web-extensions-15ebf071a16e">Web Extensions</a></ul>
+        </div>
+      </div>
     </div>
   )}
 };
