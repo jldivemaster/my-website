@@ -1,17 +1,28 @@
 import React from 'react';
 import ProjectItem from './ProjectItem';
+import { connect } from 'react-redux';
+// import { selectProject } from '../actions';
 
-const ProjectList = ({ projects, onProjectSelect })  => {
+class ProjectList extends React.Component {
 
-  const renderedList = projects.map(project => {
-    return <ProjectItem project={project} key={project.id} onProjectSelect={onProjectSelect} />
-  });
+  renderList() {
+      return this.props.projects.map(project => {
+        return <ProjectItem project={project} key={project.id} />
+    })
+  };
 
+  render() {
   return (
-    <div className='sidebar-content'><h3>My Projects</h3>
-      <div className="ui relaxed divided list">{renderedList}</div>
+    <div className="sidebar-content"><h3>My Projects</h3>
+      <div className="ui relaxed divided list">{this.renderList()}</div>
     </div>
-  )
+  )};
 }
 
-export default ProjectList;
+const mapStateToProps = (state) => {
+  return {
+    projects: state.projects
+  }
+};
+
+export default connect(mapStateToProps)(ProjectList);

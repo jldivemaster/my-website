@@ -1,9 +1,8 @@
 import React from 'react';
 import GalleryCard from './GalleryCard';
-import { Image } from 'cloudinary-react';;
 
 const locations = ["Indonesia", "Mongolia", "China", "Mexico", "Peru", "Malaysia-Singapore", "Belize", "Russia", "PNW"];
-const subjects = ["Underwater", "Sunsets", "Landscape", "Animals", "City", "People"];
+const subjects = ["Underwater", "Sunsets", "Landmarks", "Landscape", "Animals", "City", "People"];
 
 const GalleryHome = (props) => {
 

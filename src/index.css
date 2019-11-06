@@ -1,6 +1,6 @@
 .app {
-  background-color: #707070;
-  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  /* background-color: #707070;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); */
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   min-height: 100vh;
   padding-bottom: 70px;

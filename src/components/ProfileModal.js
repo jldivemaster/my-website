@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Modal = (props) => {
+const ProfileModal = (props) => {
   return ReactDOM.createPortal(
     <div onClick={props.onDismiss} className="ui dimmer modals visible active" style={{ paddingTop: '58px' }}>
       <div onClick={(e) => e.stopPropagation()} className="ui standard modal visible active" style={{ paddingLeft: '10px', paddingRight: '10px' }} >
@@ -74,4 +74,4 @@ const Modal = (props) => {
   )
 };
 
-export default Modal;
+export default ProfileModal;

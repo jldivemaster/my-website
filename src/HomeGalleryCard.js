@@ -8,7 +8,7 @@ class HomeGalleryCard extends React.Component {
   render(){
   return (
     <div className="raised link red card home-card pic-card" onClick={() => this.props.history.push('/pics')}>
-    <img className="ui image" src={image} alt="shit" />
+    <img className="ui image" src={image} alt="missing-card" />
     <div className="front-container">
       <h2>Photo Gallery</h2>
     </div>

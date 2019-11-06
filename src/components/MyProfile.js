@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from './Modal';
+import ProfileModal from './ProfileModal';
 import history from '../history';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const MyProfile = () => {
 
   return (
     <div className="profile">
-      <Modal name="Jason Leach" description="Here's a quick overview of myself"
+      <ProfileModal name="Jason Leach" description="Here's a quick overview of myself"
       content="Longer description of myself" actions={renderContent()} onDismiss={() => history.push('/')}/>
     </div>
   )

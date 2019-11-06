@@ -8,7 +8,7 @@ class HomeDevCard extends React.Component {
   render(){
   return (
     <div className="raised link card home-card dev-card" onClick={() => this.props.history.push('/dev')}>
-      <img className="ui image" src={image} />
+      <img className="ui image" src={image} alt="missing-card" />
       <div className="front-container">
         <h2>Software Dev Page</h2>
       </div>

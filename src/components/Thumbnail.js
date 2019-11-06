@@ -24,13 +24,14 @@ class Thumbnail extends React.Component {
     this.setState({ spans })
   }
 
-  openPhotoDetail() {
-    console.log('open')
+  openPhotoDetail(e) {
+    console.log('open', e.target)
   };
 
   render() {
+
   return (
-    <div id={this.props.id} style={{ gridRowEnd: `span ${this.state.spans}` }} onClick={() => this.openPhotoDetail()}>
+    <div id={this.props.id} style={{ gridRowEnd: `span ${this.state.spans}` }} onClick={(e) => this.openPhotoDetail(e)}>
         <Image cloudName="jldivemaster" publicId={this.props.publicId} ref={this.imageRef} alt={this.props.description} width="300" crop="scale" >
         </Image>
     </div>

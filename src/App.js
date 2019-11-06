@@ -5,8 +5,8 @@ import Main from './Main';
 import Footer from './components/Footer';
 import DevContainer from './components/DevContainer';
 import GalleryContainer from './components/GalleryContainer';
-import MyProfile from  './components/MyProfile';
-import MyDashboard from  './dashboard/MyDashboard';
+import MyProfile from './components/MyProfile';
+import MyDashboard from './dashboard/MyDashboard';
 
 const App = (props) => {
   return (

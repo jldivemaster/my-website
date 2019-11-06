@@ -1,4 +1,5 @@
 import history from  '../history';
+import cloudinary from '../apis/cloudinary';
 
 export const signIn = (userId) => {
   return {
@@ -11,4 +12,19 @@ export const signOut = () => {
   return {
     type: 'SIGN_OUT'
   }
+};
+
+export const selectProject = project => {
+  return {
+    type: 'PROJECT_SELECTED',
+    payload: project
+  }
+};
+
+export const fetchPhotos = () => {
+  return async dispatch => {
+    const response = await cloudinary.get()
+
+    dispatch({ type: 'FETCH_PHOTOS', payload: response.data })
+  };
 };

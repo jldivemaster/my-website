@@ -1,24 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const ProjectDetail = ({ project }) => {
-  if(!project) {
+const ProjectDetail = (props) => {
+  if(!props.project) {
     return <div>Loading...</div>
   }
-
+  console.log(props)
   // const projectSrc = `https://www.youtube.com/embed/`;
 
   return (
     <div>
       <div className="ui embed">
-        <iframe className="iframe" title="video player" src={project.img} alt={project.title} />
+        <iframe className="iframe" title="video player" src={props.project.img} alt={props.project.title} />
       </div>
         <div className="ui segment">
-          <h4 className="ui header">{project.title}</h4>
-          <p>{project.description}</p>
+          <h4 className="ui header">{props.project.title}</h4>
+          <p>{props.project.description}</p>
         </div>
 
     </div>
   )
 }
 
-export default ProjectDetail;
+const mapStateToProps = (state) => {
+  return { project: state.selectedProject }
+};
+
+export default connect(mapStateToProps)(ProjectDetail);
