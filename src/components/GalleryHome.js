@@ -1,8 +1,8 @@
 import React from 'react';
 import GalleryCard from './GalleryCard';
 
-const locations = ["Indonesia", "Mongolia", "China", "Mexico", "Peru", "Malaysia-Singapore", "Belize", "Russia", "PNW"];
-const subjects = ["Underwater", "Sunsets", "Landmarks", "Landscape", "Animals", "City", "People"];
+const locations = ["Indonesia", "Mexico", "China", "Mongolia", "Peru", "Russia", "Malaysia-Singapore", "PNW", "Belize"];
+const subjects = ["Landscapes", "Underwater", "Sunsets", "City", "Landmarks", "People", "Animals" ];
 
 const GalleryHome = (props) => {
 
@@ -10,7 +10,7 @@ const GalleryHome = (props) => {
       let id = loc.indexOf();
     return (
 
-        <GalleryCard id={`gl${id}`} title={loc} openCollection={props.openView} publicId={`${loc}/1`}/>
+        <GalleryCard id={`gl${id}`} title={loc} openCollection={props.openCollection} publicId={`${loc}/1`}/>
 
   )});
 
@@ -18,7 +18,7 @@ const GalleryHome = (props) => {
       let id = sub.indexOf();
     return (
 
-        <GalleryCard id={`gl${id}`} title={sub} openCollection={props.openView} publicId={`${sub}/1`}/>
+        <GalleryCard id={`gs${id}`} title={sub} openCollection={props.openCollection} publicId={`${sub}/1`}/>
 
   )});
 

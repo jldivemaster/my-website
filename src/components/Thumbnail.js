@@ -32,7 +32,7 @@ class Thumbnail extends React.Component {
 
   return (
     <div id={this.props.id} style={{ gridRowEnd: `span ${this.state.spans}` }} onClick={(e) => this.openPhotoDetail(e)}>
-        <Image cloudName="jldivemaster" publicId={this.props.publicId} ref={this.imageRef} alt={this.props.description} width="300" crop="scale" >
+        <Image cloudName="jldivemaster" publicId={this.props.publicId} key={this.props.key} ref={this.imageRef} alt={this.props.description} width="300" crop="scale" >
         </Image>
     </div>
   )};

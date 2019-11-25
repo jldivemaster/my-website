@@ -5,7 +5,7 @@ import { Image } from 'cloudinary-react';
 const GalleryCard = (props) => {
 
   const openCollection = () => {
-    props.openCollection(props.title)
+    props.openCollection(props.title.toLowerCase())
   }
 
   return (

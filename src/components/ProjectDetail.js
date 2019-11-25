@@ -5,8 +5,6 @@ const ProjectDetail = (props) => {
   if(!props.project) {
     return <div>Loading...</div>
   }
-  console.log(props)
-  // const projectSrc = `https://www.youtube.com/embed/`;
 
   return (
     <div>

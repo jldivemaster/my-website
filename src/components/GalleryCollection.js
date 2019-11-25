@@ -10,7 +10,7 @@ import { CloudinaryContext, Image } from 'cloudinary-react';
 class GalleryCollection extends React.Component {
   constructor(props) {
     super(props);
-    
+
   };
 
   openPhotoDetail = (id) => {
@@ -22,38 +22,39 @@ class GalleryCollection extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhotos()
-    // axios.get('http://res.cloudinary.com/jldivemaster/image/list/sunset.json')
-    //         .then(res => {
-    //             console.log(res.data.resources);
-    //             this.setState({ gallery: res.data.resources });
-    //         });
+    this.props.fetchPhotos(this.props.tagName)
   };
 
-  render () {
-    const photos = this.props.photos.map(pic => {
+  displayPhotos() {
+    // console.log(this.props.photos)
+    if(this.props.photos) {
+      return this.props.photos.map(pic => {
         return (
           <Image key={pic.public_id} publicId={pic.public_id} openPhotoDetail={() => this.openPhotoDetail()}>
           </Image>
         )
       })
+    }
+  }
+
+  render () {
 
     return (
       <div>
-        <CloudinaryContext cloudName="jldivemaster">
+        <CloudinaryContext cloudName="jldivemaster" width="300" crop="scale">
           <div className="row subheader">
             {this.props.folder}
             <button onClick={this.props.return}>Back</button>
           </div>
+          {this.displayPhotos()}
 
-            {photos}
         </CloudinaryContext>
       </div>
   )};
 }
 
 const mapStateToProps = (state) => {
-  return { photos: state.photos }
+  return { photos: state.photos.resources }
 };
 
 export default connect(mapStateToProps, { fetchPhotos })(GalleryCollection);

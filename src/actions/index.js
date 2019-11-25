@@ -21,9 +21,9 @@ export const selectProject = project => {
   }
 };
 
-export const fetchPhotos = () => {
+export const fetchPhotos = (tagName) => {
   return async dispatch => {
-    const response = await cloudinary.get()
+    const response = await cloudinary.get('/' + tagName + '.json')
 
     dispatch({ type: 'FETCH_PHOTOS', payload: response.data })
   };

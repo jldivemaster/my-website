@@ -6,9 +6,9 @@ const Header = () => {
 
   return(
     <div className="head">
-      <div className="ui four item menu" style={{ paddingTop: '15px', fontSize: '23px' }}>
+      <div className="ui four item menu tab-menu" style={{ paddingTop: '0px', fontSize: '23px' }}>
         <div className="item">
-          <Link to="/" >Home</Link>
+          <Link to="/">Home</Link>
         </div>
         <div className="item">
           <Link to="/dev">Dev</Link>

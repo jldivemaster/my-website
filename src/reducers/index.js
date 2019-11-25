@@ -7,8 +7,8 @@ import image from '../assets/notecatcher.png';
 // ========== Dev Container Reducers ==================
 const projectsReducer = () => {
   return [
-    {id: 1, title: "Notecatcher-redux", description: "A note organization app for Flatiron Students", img: image, video: "snippet"},
-    {id: 2, title: "Voluntravel", description: "A search engine site for traveling volunteer projects.", img: image, video: "snippet"},
+    {id: 1, title: "NoteCatcher", description: "A note organization app for Flatiron Students", img: image, video: "snippet"},
+    {id: 2, title: "VolunTravel", description: "A search engine site for traveling volunteer projects.", img: image, video: "snippet"},
     {id: 3, title: "Alumni Showcase", description: "Showcase site for Flatiron alumni projects", img: image, video: "snippet"}
   ]
 };

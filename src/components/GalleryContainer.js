@@ -12,9 +12,9 @@ class GalleryContainer extends React.Component {
 
   displayView = () => {
     if(this.state.view === 'home') {
-        return <GalleryHome openView={this.setView}/>;
+        return <GalleryHome openCollection={this.setView}/>;
     }
-    return <GalleryCollection return={() => this.setView('home')} folder={this.state.view} numPics={5} />
+    return <GalleryCollection tagName={this.state.view} return={() => this.setView('home')} />
   };
 
   render(){
